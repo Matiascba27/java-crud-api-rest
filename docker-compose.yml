@@ -1,0 +1,15 @@
+version: '3.9'
+
+services:
+  postgres:
+    image: postgres:latest
+    restart: always
+    environment:
+      POSTGRES_USER: ${SPING_DATASOURCE_USERNAME}
+      POSTGRES_PASSWORD: ${SPING_DATASOURCE_PASSWORD}
+      POSTGRES_DB: ${SPING_DATASOURCE_DB}
+    ports:
+      - "5432:5432"
+    volumes:
+      - ./postgres:/var/lib/postgresql/data
+  
