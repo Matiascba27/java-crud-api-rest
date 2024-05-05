@@ -1,6 +1,8 @@
 // Importamos los paquetes
 package com.apirest.apirest.Entities;
 
+import java.math.BigDecimal;
+
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
@@ -17,7 +19,7 @@ public class Producto {
     // Los atributos de la clase Producto
     private Long id;
     private String nombre;
-    private double precio;
+    private BigDecimal precio;
 
     // Generar los Getters y Setters
     public Long getId() {
@@ -32,10 +34,10 @@ public class Producto {
     public void setNombre(String nombre) {
         this.nombre = nombre;
     }
-    public double getPrecio() {
+    public BigDecimal getPrecio() {
         return precio;
     }
-    public void setPrecio(double precio) {
+    public void setPrecio(BigDecimal precio) {
         this.precio = precio;
     }
 

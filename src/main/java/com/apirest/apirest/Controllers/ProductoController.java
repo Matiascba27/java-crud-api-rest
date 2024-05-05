@@ -18,6 +18,9 @@ import org.springframework.web.bind.annotation.RestController;
 // Importamos la clase Producto
 import com.apirest.apirest.Entities.Producto;
 import com.apirest.apirest.Repositories.ProductoRepository;
+import com.apirest.apirest.Requests.ProductoRequest;
+
+import jakarta.validation.Valid;
 
 // Indica que esta clase es un controlador de REST
 @RestController
@@ -47,7 +50,10 @@ public class ProductoController {
 
     // Indica que el metodo siguiente devuelve una respuesta para una solicitud POST
     @PostMapping
-    public Producto createProducto(@RequestBody Producto producto) {
+    public Producto createProducto(@Valid @RequestBody ProductoRequest productoRequest) {
+        Producto producto = new Producto();
+        producto.setNombre(productoRequest.getNombre());
+        producto.setPrecio(productoRequest.getPrecio());
         return productoRepository.save(producto);
     }
 
