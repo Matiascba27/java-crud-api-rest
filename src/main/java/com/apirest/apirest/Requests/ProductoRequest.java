@@ -2,6 +2,7 @@ package com.apirest.apirest.Requests;
 
 import java.math.BigDecimal;
 
+import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.PositiveOrZero;
 
 public class ProductoRequest {
